@@ -1,6 +1,10 @@
 <script>
+import LoadMail from './components/LoadMail.vue';
 export default {
   name: 'App',
+  components: {
+    LoadMail
+  },
   data() {
 
     return {
@@ -31,7 +35,8 @@ export default {
 </script>
 
 <template>
-  <div class="container mt-5">
+  <LoadMail v-if="emailList.length < 10"></LoadMail>
+  <div v-else class="container mt-5">
     <div class="card p-3 w-75 m-auto">
       <div class="d-flex justify-content-around align-items-center">
         <h1 class="text-center">{{ name }}</h1>
